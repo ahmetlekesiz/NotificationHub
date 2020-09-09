@@ -15,11 +15,10 @@ public class Company {
     private MessagePackage emailPackage;
     private boolean isBlackListed;
     private MessageSender messageSender;
-    private Invoice companyInvoice;
 
     public Company(String companyName, Language language){
         this.companyName = companyName;
-        this.customerIdList = new ArrayList<Integer>();
+        this.customerIdList = new ArrayList<>();
         this.companyLanguage = language;
         this.isBlackListed = false;
         this.messageSender = new MessageSender();
@@ -27,12 +26,10 @@ public class Company {
 
     public void setSmsPackage(MessagePackage smsPackage){
         this.smsPackage = smsPackage;
-        companyInvoice = new Invoice();
-        companyInvoice.setAmount(smsPackage.getPackagePrice());
     }
 
-    public void sendSms(){
-        messageSender.sendMessage(this, this.smsPackage);
+    public boolean sendSms(){
+        return messageSender.sendMessage(this, this.smsPackage);
     }
 
     public void sendEmail(){
@@ -44,10 +41,9 @@ public class Company {
     }
 
     public ArrayList<Integer> addCustomerToCustomerIdList(ArrayList<Integer> customerIdList, int newCustomerId) {
-        customerIdList.add(Integer.valueOf(newCustomerId));
+        customerIdList.add(newCustomerId);
         return customerIdList;
     }
-
 
     public void setEmailPackage(MessagePackage emailPackage){
         this.emailPackage = emailPackage;
@@ -61,7 +57,6 @@ public class Company {
         return this.emailPackage;
     }
 
-
     public Language getCompanyLanguage() {
         return companyLanguage;
     }
@@ -70,21 +65,12 @@ public class Company {
         this.companyLanguage = companyLanguage;
     }
 
-
     public boolean isBlackListed() {
         return isBlackListed;
     }
 
     public void setBlackListed(boolean blackListed) {
         isBlackListed = blackListed;
-    }
-
-    public Invoice getCompanyInvoice() {
-        return companyInvoice;
-    }
-
-    public void setCompanyInvoice(Invoice companyInvoice) {
-        this.companyInvoice = companyInvoice;
     }
 
     public String getCompanyName() {

@@ -10,6 +10,8 @@ public abstract class MessagePackage {
     double incrementPrice;
     boolean isFlexible;
 
+    Invoice packageInvoice;
+
     public abstract String getMessageContent(Language language);
 
     public void incrementMessageCount(){
@@ -54,6 +56,14 @@ public abstract class MessagePackage {
 
     public void setFlexible(boolean flexible) {
         isFlexible = flexible;
+    }
+
+    public Invoice getPackageInvoice() {
+        return packageInvoice;
+    }
+
+    public void setPackageInvoice(Invoice packageInvoice) {
+        this.packageInvoice = packageInvoice;
     }
 
 }
