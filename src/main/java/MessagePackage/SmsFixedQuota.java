@@ -4,14 +4,12 @@ import Language.Language;
 import Company.Company;
 
 public class SmsFixedQuota extends MessagePackage{
-
     Language packageLanguage;
-    final int packageQuota = 1000;
-    final int packagePrice = 100;
-    int currentMessageCount;
-    final double incrementPrice = 100;
-    final boolean isFlexible = false;
 
+    final int packageQuota = 1000;
+    final int packagePrice = 20;
+    int currentMessageCount;
+    final boolean isFlexible = false;
     Invoice packageInvoice;
 
     @Override
@@ -23,11 +21,12 @@ public class SmsFixedQuota extends MessagePackage{
         this.currentMessageCount = 0;
         this.packageLanguage = company.getCompanyLanguage();
         this.packageInvoice = new Invoice();
+        this.packageInvoice.setAmount(packagePrice);
     }
 
     @Override
     public double getIncrementPrice() {
-        return incrementPrice;
+        return this.packagePrice;
     }
 
     @Override
@@ -37,5 +36,26 @@ public class SmsFixedQuota extends MessagePackage{
 
     public void setPackageInvoice(Invoice packageInvoice) {
         this.packageInvoice = packageInvoice;
+    }
+
+    public int getCurrentMessageCount() {
+        return this.currentMessageCount;
+    }
+
+    @Override
+    public int getPackageQuota() {
+        return packageQuota;
+    }
+
+    public void incrementMessageCount(){
+        this.currentMessageCount++;
+    }
+
+    public void setCurrentMessageCount(int currentMessageCount) {
+        this.currentMessageCount = currentMessageCount;
+    }
+
+    public boolean isFlexible() {
+        return isFlexible;
     }
 }

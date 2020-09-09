@@ -14,56 +14,21 @@ public abstract class MessagePackage {
 
     public abstract String getMessageContent(Language language);
 
-    public void incrementMessageCount(){
-        this.currentMessageCount++;
-    }
+    public abstract void incrementMessageCount();
 
-    public Language getPackageLanguage() {
-        return packageLanguage;
-    }
-
-    public void setPackageLanguage(Language packageLanguage) {
-        this.packageLanguage = packageLanguage;
-    }
-
-    public int getPackageQuota() {
-        return packageQuota;
-    }
+    public abstract int getPackageQuota();
 
     public int getPackagePrice() {
         return packagePrice;
     }
 
-    public int getCurrentMessageCount() {
-        return currentMessageCount;
-    }
+    public abstract int getCurrentMessageCount();
 
-    public void setCurrentMessageCount(int currentMessageCount) {
-        this.currentMessageCount = currentMessageCount;
-    }
+    public abstract void setCurrentMessageCount(int currentMessageCount);
 
-    public double getIncrementPrice() {
-        return incrementPrice;
-    }
+    public abstract double getIncrementPrice();
 
-    public void setIncrementPrice(double incrementPrice) {
-        this.incrementPrice = incrementPrice;
-    }
+    public abstract Invoice getPackageInvoice();
 
-    public boolean isFlexible() {
-        return isFlexible;
-    }
-
-    public void setFlexible(boolean flexible) {
-        isFlexible = flexible;
-    }
-
-    public Invoice getPackageInvoice() {
-        return packageInvoice;
-    }
-
-    public void setPackageInvoice(Invoice packageInvoice) {
-        this.packageInvoice = packageInvoice;
-    }
-
+    public abstract boolean isFlexible();
 }
