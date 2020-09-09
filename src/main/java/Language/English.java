@@ -2,9 +2,7 @@ package Language;
 
 public class English implements Language{
     @Override
-    public String getNotificationMessage() {
-        return "Company.Notification content in English.";
-    }
+    public String getNotificationMessage() {return "Notification content in English."; }
 
     @Override
     public String getErrorMessage() {

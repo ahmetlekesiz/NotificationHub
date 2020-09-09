@@ -22,7 +22,7 @@ public class MessageSender {
         } else {
             System.out.println(messagePackage.getMessageContent(company.getCompanyLanguage()));
             company.getCompanyInvoice().setAmount(company.getCompanyInvoice().getAmount() + messagePackage.getIncrementPrice());
-            if (messagePackage.isFlexible()) messagePackage.setCurrentMessageCount(0);
+            if (!messagePackage.isFlexible()) messagePackage.setCurrentMessageCount(0);
             messagePackage.incrementMessageCount();
         }
     }

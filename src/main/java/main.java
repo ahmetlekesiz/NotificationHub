@@ -1,5 +1,6 @@
 import Company.Company;
 import Language.English;
+import Language.Turkish;
 import MessagePackage.SmsFixedQuota;
 
 import java.time.LocalDate;
@@ -9,12 +10,14 @@ public class main {
         LocalDate deneme = LocalDate.now();
         System.out.println(deneme);
 
-        Company Trendyol = new Company("Trendyol", new English());
+        Company Trendyol = new Company("Trendyol", new Turkish());
 
         Trendyol.setSmsPackage(new SmsFixedQuota(Trendyol));
 
-        Trendyol.sendSms();
+        for (int i = 0; i < 10002; i++){
+            Trendyol.sendSms();
+        }
 
-        System.out.println("deneme");
+
     }
 }

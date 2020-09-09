@@ -9,6 +9,7 @@ public class SmsFixedQuota extends MessagePackage{
     final int packageQuota = 1000;
     final int packagePrice = 100;
     int currentMessageCount;
+
     final double incrementPrice = 100;
     final boolean isFlexible = false;
 
@@ -20,6 +21,11 @@ public class SmsFixedQuota extends MessagePackage{
     public SmsFixedQuota(Company company){
         this.currentMessageCount = 0;
         this.packageLanguage = company.getCompanyLanguage();
+    }
+
+    @Override
+    public double getIncrementPrice() {
+        return incrementPrice;
     }
 
 }
