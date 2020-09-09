@@ -10,7 +10,7 @@ public class EmailFlexibleQuota extends MessagePackage{
     int currentMessageCount;
     final double incrementPrice = 0.03;
     final boolean isFlexible = true;
-    Invoice packageInvoice;
+    MessagePackageInvoice packageMessagePackageInvoice;
 
     @Override
     public String getMessageContent(Language language) {
@@ -20,8 +20,8 @@ public class EmailFlexibleQuota extends MessagePackage{
     public EmailFlexibleQuota(Company company){
         this.currentMessageCount = 0;
         this.packageLanguage = company.getCompanyLanguage();
-        this.packageInvoice = new Invoice();
-        this.packageInvoice.setAmount(packagePrice);
+        this.packageMessagePackageInvoice = new MessagePackageInvoice();
+        this.packageMessagePackageInvoice.setAmount(packagePrice);
     }
 
     @Override
@@ -30,12 +30,12 @@ public class EmailFlexibleQuota extends MessagePackage{
     }
 
     @Override
-    public Invoice getPackageInvoice() {
-        return packageInvoice;
+    public MessagePackageInvoice getPackageInvoice() {
+        return packageMessagePackageInvoice;
     }
 
-    public void setPackageInvoice(Invoice packageInvoice) {
-        this.packageInvoice = packageInvoice;
+    public void setPackageInvoice(MessagePackageInvoice packageMessagePackageInvoice) {
+        this.packageMessagePackageInvoice = packageMessagePackageInvoice;
     }
 
     public int getCurrentMessageCount() {

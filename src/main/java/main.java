@@ -24,6 +24,7 @@ public class main {
 
         for (int i = 0; i < 2005; i++){
             Trendyol.sendEmail();
+            System.out.println(Trendyol.getEmailPackage().getMessageContent(Trendyol.getCompanyLanguage()));
             System.out.println(Trendyol.getEmailPackage().getPackageInvoice().getAmount());
         }
 

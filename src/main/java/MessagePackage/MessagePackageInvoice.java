@@ -3,14 +3,14 @@ package MessagePackage;
 import java.time.LocalDate;
 import java.util.Date;
 
-public class Invoice {
+public class MessagePackageInvoice {
 
     private LocalDate recordDate;
     private LocalDate lastPaymentDate;
     private boolean isPaidBefore;
     private double amount;
 
-    public Invoice(){
+    public MessagePackageInvoice(){
         this.recordDate = LocalDate.now();
     }
 

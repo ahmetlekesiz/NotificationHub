@@ -10,7 +10,7 @@ public abstract class MessagePackage {
     double incrementPrice;
     boolean isFlexible;
 
-    Invoice packageInvoice;
+    MessagePackageInvoice packageMessagePackageInvoice;
 
     public abstract String getMessageContent(Language language);
 
@@ -28,7 +28,7 @@ public abstract class MessagePackage {
 
     public abstract double getIncrementPrice();
 
-    public abstract Invoice getPackageInvoice();
+    public abstract MessagePackageInvoice getPackageInvoice();
 
     public abstract boolean isFlexible();
 }
